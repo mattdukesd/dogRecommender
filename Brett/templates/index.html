@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dog Matcher</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <img class="img-responsive" style="width:100%" src="chihuahua.jpg" alt="Chihuahuas">
+            </div>
+            <div class="col-md-6">
+              <h1 align="center">Dog Match Maker</h1>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-6 col-sm-12">
+                <div class="col-md-12">
+                  <form action = "/" method="POST">
+                    <strong>Input a rating from 1-5 (low to high) for each of the follow questions:</strong><br>
+                    <br>
+                    <p>
+                      <select name="apartment" id="apartment">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Do you need a dog that can adapt well to apartment living?
+                    </p>
+                    <p>
+                      <select name="experience" id="experience">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Are you an experienced dog owner?
+                    </p>
+                    <p>
+                      <select name="alone" id="alone">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Will your dog be spending a lot of time alone?
+                    </p>
+                    <p>
+                      <select name="children" id="children">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Does your dog need to be child friendly?
+                    </p>
+                    <p>
+                      <select name="social" id="social">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Does your dog need to be dog friendly?
+                    </p>
+                    <p>
+                      <select name="shedding" id="shedding">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> How much shedding are you willing to tolerate? (1-none, 5-heavy)
+                    </p>
+                    <p>
+                      <select name="groom" id="groom">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Do you need an easy to groom dog?
+                    </p>
+                    <p>
+                      <select name="size" id="size">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> What size dog do you want? (1-smaller, 5-larger)
+                    </p>
+                    <p>
+                      <select name="intelligence" id="inteligence">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Do you want an intelligent dog?
+                    </p>
+                    <p>
+                      <select name="barking" id="barking">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> Are you concerned about barking or howling?
+                    </p>
+                    <p>
+                      <select name="excercise" id="excercise">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option selected="selected" value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> How much excercise will you dog be getting?
+                    </p>
+                    <input type="submit">
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="col-md-12">
+                  <p><strong>Based on your lifestyle and preferences we recommend a (breed here):</strong></p>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <a href="http://petadoption.ocpetinfo.com/LostFound/LFShowImage.asp?ID=A1570777&Type=Dog&sortBy=primary_breed&orderBy=asc&sortBy2=secondary_breed&orderBy2=asc">
+                      <img id=recommended src="chihuahua.jpg" alt="Chihuahuas" style="display:block;width:300px;height:auto;margin-left:auto;margin-right:auto;">
+                    </a>
+                    <div class="col-md-12">
+                      <p align="center" id="recommended_breed"><strong>Breed:</strong> Chihuahua</p>
+                      <p align="center" id="recommended_age"><strong>Age:</strong> 10</p>
+                      <p align="center" id="recommended_sex"><strong>Sex:</strong> M</p>
+                      <p align="center" id="recommended_weight"><strong>Weight:</strong> 5</p>
+                      <p align="center" id="recommended_color"><strong>Color:</strong> Brown</p>
+                      <hr>
+                      <p>additional chihuahua links</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
