@@ -1,0 +1,7 @@
+@app.route('/')
+def index():
+    if 'username' in session:
+        username = session['username']
+        return render_template('index.html', recommended_breed=[0][0], recommended_age=, recommended_sex=, recommended_weight=, recommended_color=)
+    else:
+        return render_template('index.html')
