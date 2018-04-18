@@ -10,13 +10,16 @@
     <body>
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <img class="img-responsive" style="width:100%" src="chihuahua.jpg" alt="Chihuahuas">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h1 align="center">Dog Match Maker</h1>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
+                <a href="https://www.merrickpetcare.com/dogs" target="_blank">
+                    <img src="dogAd.jpg" alt="Advertisement" style="display:block;width:auto;height:175px;margin-left:auto;margin-right:auto;">
+                </a>
             </div>
           </div>
           <div class="row">
@@ -133,24 +136,27 @@
                 <div class="col-md-12">
                   <p><strong>Based on your lifestyle and preferences we recommend a (breed here):</strong></p>
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <a href="http://petadoption.ocpetinfo.com/LostFound/LFShowImage.asp?ID=A1570777&Type=Dog&sortBy=primary_breed&orderBy=asc&sortBy2=secondary_breed&orderBy2=asc">
-                      <img id=recommended src="chihuahua.jpg" alt="Chihuahuas" style="display:block;width:300px;height:auto;margin-left:auto;margin-right:auto;">
-                    </a>
+                {% if username %}
+                    <div class="row">
                     <div class="col-md-12">
-                      <p align="center" id="recommended_breed"><strong>Breed:</strong> Chihuahua</p>
-                      <p align="center" id="recommended_age"><strong>Age:</strong> 10</p>
-                      <p align="center" id="recommended_sex"><strong>Sex:</strong> M</p>
-                      <p align="center" id="recommended_weight"><strong>Weight:</strong> 5</p>
-                      <p align="center" id="recommended_color"><strong>Color:</strong> Brown</p>
-                      <hr>
-                      <p>additional chihuahua links</p>
+                        <a href="http://petadoption.ocpetinfo.com/LostFound/LFShowImage.asp?ID=A1570777&Type=Dog&sortBy=primary_breed&orderBy=asc&sortBy2=secondary_breed&orderBy2=asc">
+                        <img id=recommended src="chihuahua.jpg" alt="Chihuahuas" style="display:block;width:300px;height:auto;margin-left:auto;margin-right:auto;">
+                        </a>
+                        <div class="col-md-12">
+                        <p align="center" id="recommended_breed"><strong>Breed:</strong> {{username.recommended_breed}}</p>
+                        <p align="center" id="recommended_age"><strong>Age:</strong> {{username.recommended_age}}</p>
+                        <p align="center" id="recommended_sex"><strong>Sex:</strong> {{username.recommended_sex}}</p>
+                        <p align="center" id="recommended_weight"><strong>Weight:</strong> {{username.recommended_weight}}</p>
+                        <p align="center" id="recommended_color"><strong>Color:</strong> {{username.recommended_color}}</p>
+                        <hr>
+                        <p>additional chihuahua links</p>
+                        </div>
                     </div>
-                  </div>
-                </div>
+                    </div>
+                {% endif %}
               </div>
             </div>
           </div>
     </body>
 </html>
+
