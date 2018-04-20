@@ -5,6 +5,7 @@ from Levenshtein import distance as LD
 import pandas as pd
 
 app = Flask(__name__, static_url_path='/static')
+app.secret_key = 'secret'
 
 @app.route("/")
 def welcome():
@@ -14,9 +15,10 @@ def welcome():
 def survey():
     survey_result = request.form
     session['survey_result'] = survey_result
-    return redirect(url_for('index'))
+    return redirect('/')
 @app.route('/recommended')
 def recommend():
+    survey_result = session['survey_result']
     breed_info = pd.read_csv("breed_info.csv")
     apartment = float(survey_result['apartment'])
     experience = float(survey_result['experience'])
@@ -187,10 +189,11 @@ def survey():
     #return redirect('/')
     return inventory_ret.to_json()
 
+"""
 if __name__ == "__main__":
     app.debug = True
     app.run()
-"""
+
 
 
 
