@@ -24,7 +24,7 @@ d3.json('/recommended', function(data){
   document.getElementById("recommended_sex").innerHTML+=" "+sx;
   document.getElementById("recommended_weight").innerHTML+=" "+wt;
   document.getElementById("recommended_color").innerHTML+=" "+color;
-  document.getElementById("recommended_rec").innerHTML+=" "+rc;
+  
   document.getElementById("recommended_intk_d").innerHTML+=" "+intk_d;
    document.getElementById("recommended_intk_j").innerHTML+=" "+intk_j;
    document.getElementById("recommended_img").src=" "+lk;
