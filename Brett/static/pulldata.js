@@ -9,7 +9,7 @@ d3.json('/recommended', function(data){
   intk_d = result[0]["Intake Date"];
   intk_j = result[0]["Intake Jurisdiction"];
   mpb = result[0]["Mapped_Breed"];
-  rc = result[0]["Recommendation Score"];
+
   sx = result[0]["Sex"];
   wt = result[0]["Weight"];
   lk = result[0]["link"];
