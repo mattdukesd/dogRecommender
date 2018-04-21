@@ -58,6 +58,7 @@ def recommend():
     dog_inventory = dog_inventory.reset_index()
     dog_inventory = dog_inventory.drop(["index"],axis=1)
     breed_inventory = dog_inventory["Breed"]
+    breed_link=dog_inventory["link"]
 
     def breed_preprocess(s):
         breed = s.lower()

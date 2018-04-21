@@ -12,6 +12,7 @@ d3.json('/recommended', function(data){
   rc = result[0]["Recommendation Score"];
   sx = result[0]["Sex"];
   wt = result[0]["Weight"];
+  lk = result[0]["link"];
 
   
   
@@ -26,6 +27,7 @@ d3.json('/recommended', function(data){
   document.getElementById("recommended_rec").innerHTML+=" "+rc;
   document.getElementById("recommended_intk_d").innerHTML+=" "+intk_d;
    document.getElementById("recommended_intk_j").innerHTML+=" "+intk_j;
+   document.getElementById("recommended_img").src=" "+lk;
    
   
 });
