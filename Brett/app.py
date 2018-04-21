@@ -4,7 +4,9 @@ import numpy as np
 from Levenshtein import distance as LD
 import pandas as pd
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__,  static_url_path='', 
+            static_folder='static',
+            template_folder='templates')
 app.secret_key = 'secret'
 
 @app.route("/")
@@ -16,6 +18,7 @@ def survey():
     survey_result = request.form
     session['survey_result'] = survey_result
     return redirect('/')
+
 @app.route('/recommended')
 def recommend():
     survey_result = session['survey_result']
@@ -89,7 +92,7 @@ def recommend():
             if LD(s_new, breed) < min_dist:
                 min_dist = LD(s_new, breed)
                 current_breed = breed
-            return current_breed
+        return current_breed
 
     dog_inventory["Mapped_Breed"] = breed_inventory.map(breed_fix)
 
@@ -100,7 +103,8 @@ def recommend():
     dog_inventory["Recommendation Score"] =  user_breed_dist
     inventory_ret = dog_inventory.sort_values(by = "Recommendation Score", ascending=False).head(5)
     #return redirect('/')
-    return inventory_ret.to_json()
+    return inventory_ret.to_json(orient='records')
+    
 
 
 """

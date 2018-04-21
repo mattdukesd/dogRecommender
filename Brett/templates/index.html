@@ -5,20 +5,26 @@
         <title>Dog Matcher</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+        <script src="{{ url_for('static', filename='pulldata.js') }}"></script>
+        
+        
+        
+        <!-- {{ url_for('static', filename='styles/dist/js/bootstrap.js') }} -->
     </head>
 
     <body>
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <img class="img-responsive" style="width:100%" src="chihuahua.jpg" alt="Chihuahuas">
+              <img class="img-responsive" style="width:100%" src="http://chihuahuabuzz.com/wp-content/uploads/2015/11/3-chihuahuas-dressed-up.jpg" alt="Chihuahuas">
             </div>
             <div class="col-md-4">
               <h1 align="center">Dog Match Maker</h1>
             </div>
             <div class="col-md-4">
                 <a href="https://www.merrickpetcare.com/dogs" target="_blank">
-                    <img src="dogAd.jpg" alt="Advertisement" style="display:block;width:auto;height:175px;margin-left:auto;margin-right:auto;">
+                    <img src="http://chihuahuabuzz.com/wp-content/uploads/2015/11/3-chihuahuas-dressed-up.jpg" alt="Advertisement" style="display:block;width:auto;height:175px;margin-left:auto;margin-right:auto;">
                 </a>
             </div>
           </div>
@@ -26,7 +32,7 @@
             <div class="col-md-12">
               <div class="col-md-6 col-sm-12">
                 <div class="col-md-12">
-                  <form method="POST">
+                  <form action = "/survey" method="POST">
                     <strong>Input a rating from 1-5 (low to high) for each of the follow questions:</strong><br>
                     <br>
                     <p>
@@ -102,7 +108,7 @@
                       </select> What size dog do you want? (1-smaller, 5-larger)
                     </p>
                     <p>
-                      <select name="intelligence" id="inteligence">
+                      <select name="intelligence" id="intelligence">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option selected="selected" value="3">3</option>
@@ -120,13 +126,13 @@
                       </select> Are you concerned about barking or howling?
                     </p>
                     <p>
-                      <select name="excercise" id="excercise">
+                      <select name="exercise" id="exercise">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option selected="selected" value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                      </select> How much excercise will you dog be getting?
+                      </select> How much exercise will you dog be getting?
                     </p>
                     <input type="submit">
                   </form>
@@ -136,24 +142,29 @@
                 <div class="col-md-12">
                   <p><strong>Based on your lifestyle and preferences we recommend a (breed here):</strong></p>
                 </div>
-                {% if username %}
+
                     <div class="row">
                     <div class="col-md-12">
                         <a href="http://petadoption.ocpetinfo.com/LostFound/LFShowImage.asp?ID=A1570777&Type=Dog&sortBy=primary_breed&orderBy=asc&sortBy2=secondary_breed&orderBy2=asc">
                         <img id=recommended src="chihuahua.jpg" alt="Chihuahuas" style="display:block;width:300px;height:auto;margin-left:auto;margin-right:auto;">
                         </a>
                         <div class="col-md-12">
-                        <p align="center" id="recommended_breed"><strong>Breed:</strong> {{username.recommended_breed}}</p>
-                        <p align="center" id="recommended_age"><strong>Age:</strong> {{username.recommended_age}}</p>
-                        <p align="center" id="recommended_sex"><strong>Sex:</strong> {{username.recommended_sex}}</p>
-                        <p align="center" id="recommended_weight"><strong>Weight:</strong> {{username.recommended_weight}}</p>
-                        <p align="center" id="recommended_color"><strong>Color:</strong> {{username.recommended_color}}</p>
+                        <p align="center" id="recommended_breed"><strong>Breed:</strong> </p>
+                        <p align="center" id="recommended_age"><strong>Age:</strong></p>
+                        <p align="center" id="recommended_sex"><strong>Sex:</strong> </p>
+                        <p align="center" id="recommended_weight"><strong>Weight:</strong></p>
+                        <p align="center" id="recommended_color"><strong>Color:</strong></p>
+                        <p align="center" id="recommended_rec"><strong>Recommendation Score:</strong></p>
+                        <p align="center" id="recommended_intk_d"><strong>Intake Date:</strong></p>
+                        <p align="center" id="recommended_intk_j"><strong>Intake Jurisdiction:</strong></p>
+                        
+                        
                         <hr>
                         <p>additional chihuahua links</p>
                         </div>
                     </div>
                     </div>
-                {% endif %}
+      
               </div>
             </div>
           </div>
